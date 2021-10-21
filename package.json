@@ -1,9 +1,21 @@
 {
-  "name": "fews-wms-requests",
+  "name": "@deltares/fews-wms-requests",
   "version": "0.1.0",
+  "description": "Library for making requests to the FEWS OGC Web Map Services",
+  "author": {
+    "name": "Werner Kramer",
+    "email": "werner.kramer@deltares.nl"
+  },
+  "license": "ISC",
+  "keywords": [
+    "FEWS",
+    "Web Map Services",
+    "wms",
+    "OGC:WMS"
+  ],
   "main": "./dist/fews-wms-requests.umd.js",
   "typings": "./dist/types/index.d.ts",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "npm run clean && tsc && webpack",
     "clean": "shx rm -rf dist",
@@ -37,5 +49,12 @@
   "files": [
     "dist/*",
     "src/*"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deltares/fews-wms-requests"
+  },
+  "bugs": {
+    "url": "https://github.com/Deltares/fews-wms-requests/issues"
+  }
 }
