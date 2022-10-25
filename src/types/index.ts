@@ -1,2 +1,1 @@
-export * from './filters'
-export * from './getCapabilitiesResponse'
+export * from './wmsRequestType'

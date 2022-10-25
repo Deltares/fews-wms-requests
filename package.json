@@ -10,26 +10,31 @@
     "doc": "typedoc --out doc src",
     "lint": "eslint src/**.ts",
     "lint:fix": "eslint src/**.ts --fix",
-    "prepare": "npm run build",
-    "test": "jest"
-  },
-  "dependencies": {
-    "core-js": "^3.9.1"
+    "test:unit": "jest unit --collect-coverage",
+    "test:e2e": "jest e2e",
+    "test": "jest --coverage"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.15",
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "eslint": "^7.22.0",
-    "jest": "^26.6.1",
+    "@types/jest": "^28.0.0",
+    "@types/jsdom": "^16.2.14",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "cross-fetch": "^3.1.5",
+    "dotenv": "^16.0.0",
+    "eslint": "^6.8.0",
+    "fetch-mock": "^9.11.0",
+    "jest": "^28.0.1",
+    "jest-environment-jsdom": "^29.0.1",
+    "jest-junit": "^13.0.0",
+    "jest-teamcity-reporter": "^0.9.0",
+    "jsdom": "^19.0.0",
     "shx": "^0.3.2",
-    "ts-jest": "^26.5.4",
-    "ts-loader": "^8.0.18",
-    "typedoc": "^0.20.3",
-    "typescript": "^4.2.3",
-    "webpack": "^5.27.0",
-    "webpack-cli": "^4.5.0",
-    "xhr-mock": "^2.5.1"
+    "ts-jest": "^28.0.8",
+    "ts-loader": "^9.3.1",
+    "typedoc": "^0.23.13",
+    "typescript": "^4.8.2",
+    "webpack": "^5.59.0",
+    "webpack-cli": "^4.9.1"
   },
   "engines": {
     "node": ">=0.14"
