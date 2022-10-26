@@ -1,6 +1,6 @@
 {
   "name": "fews-wms-requests",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "./dist/fews-wms-requests.umd.js",
   "typings": "./dist/types/index.d.ts",
   "private": true,
