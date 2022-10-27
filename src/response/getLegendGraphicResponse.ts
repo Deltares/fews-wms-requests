@@ -1,3 +1,6 @@
+import { ColourMap } from "../response/colourMap";
+
 export interface GetLegendGraphicResponse {
-    legend: any;
+    unit: string;
+    legend: ColourMap;
 }
