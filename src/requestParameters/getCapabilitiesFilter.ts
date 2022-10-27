@@ -3,7 +3,7 @@ import { BaseWMSFilter } from "./baseWmsFilter";
 export interface GetCapabilitiesFilter extends BaseWMSFilter{
     /** Format of the response. Options are: application/xml or application/json.
      *  The default format is application/xml. */
-    format?: string;
+    format?: "application/xml" | "application/json";
 
     /** (since 2019.02): the layerId of the plot for which the capabilities should
      *  be determined. Only one layerId is currently supported. */
