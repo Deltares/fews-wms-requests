@@ -18,3 +18,7 @@ npm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Test results
+coverage/
+junit.xml
