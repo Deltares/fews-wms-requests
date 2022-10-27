@@ -1,4 +1,6 @@
-export interface GetCapabilitiesFilter {
+import { BaseWMSFilter } from "./baseWmsFilter";
+
+export interface GetCapabilitiesFilter extends BaseWMSFilter{
     /** Format of the response. Options are: application/xml or application/json.
      *  The default format is application/xml. */
     format?: string;
