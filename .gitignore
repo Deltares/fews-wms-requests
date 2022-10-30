@@ -21,4 +21,4 @@ npm-debug.log*
 
 # Test results
 coverage/
-junit.xml
+reports/
