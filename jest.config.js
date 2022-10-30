@@ -5,9 +5,7 @@ module.exports = {
     },
     testRegex: "\.spec\.(ts|tsx|js)$",
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-    reporters: [ "default", ["jest-junit",{
-        outputDirectory: 'reports', outputName: 'junit.xml',
-    } ] ],
+    reporters: [ "default", "jest-junit" ],
     "testResultsProcessor": "jest-teamcity-reporter",
     setupFiles: ["./.env.test"],
     "coverageReporters": ["lcov", "text", "teamcity"],
