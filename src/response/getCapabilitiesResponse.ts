@@ -7,15 +7,15 @@
 
 export interface GetCapabilitiesResponse {
   title: string;
-  layers: Layers[];
+  layers: Layer[];
 }
-export interface Layers {
+export interface Layer {
   name: string;
   title: string;
   abstract?: string;
   groupName?: string;
   groupTitle?: string;
-  keywordList?: KeywordList[];
+  keywordList?: Keyword[];
   externalForecastTime?: string;
   ensembles?: Ensemble[];
   timesDefault?: string;
@@ -34,12 +34,12 @@ export interface Layers {
   lastValueTime?: string | null;
   elevation?: {
     units?: string;
-    lowerValue?: string;
-    upperValue?: string;
+    lowerValue?: number;
+    upperValue?: number;
   };
   styles?: Style[];
 }
-export interface KeywordList {
+export interface Keyword {
   parameterId?: string;
   locationId?: string;
   moduleInstanceId?: string;
