@@ -3,7 +3,7 @@ import {BaseWMSFilter} from "../requestParameters/baseWmsFilter";
 export interface GetLegendGraphicFilter extends BaseWMSFilter {
     /** (optional, since 2020.02): The format of the GetLegendGraphic response.
      *  Possible values are:  image/png (the default) or application/json. */
-    format?: "image/png" | "application/json"
+    format?: "image/png" | "application/json";
 
     /** The gridPlotId of the gridPlot which legend should be displayed. Only one
      *  gridPlotId is supported. */
