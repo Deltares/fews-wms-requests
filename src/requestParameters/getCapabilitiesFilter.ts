@@ -7,11 +7,11 @@ export interface GetCapabilitiesFilter extends BaseWMSFilter{
 
     /** (since 2019.02): the layerId of the plot for which the capabilities should
      *  be determined. Only one layerId is currently supported. */
-    layers?: string
+    layers?: string;
 
     /** (optional, since 2019.02): Get the capabilities without the times. The
      *  default is false. */
-    onlyHeaders?: boolean
+    onlyHeaders?: boolean;
 
     /* forecastPeriod: By default only the current forecast will be returned by
        the GetCapabilities. To get other forecasts, a forecast period needs to be
