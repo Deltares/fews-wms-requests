@@ -6,9 +6,14 @@
     "name": "Werner Kramer",
     "email": "werner.kramer@deltares.nl"
   },
+  "license": "ISC",
   "keywords": [
     "FEWS",
-    "WMS-T Service"
+    "Delft-FEWS",
+    "Web Map Services",
+    "WMS-T",
+    "WMS",
+    "OGC:WMS"
   ],
   "main": "./dist/fews-wms-requests.umd.js",
   "typings": "./dist/types/index.d.ts",
