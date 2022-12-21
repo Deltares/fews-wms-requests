@@ -30,7 +30,7 @@
     "json2ts": "curl https://fewsdocs.deltares.nl/webservices/wms/schemas/wms/pi_wms_get_capabilities.json | json2ts > src/response/getCapabilitiesResponse.ts & curl https://fewsdocs.deltares.nl/webservices/wms/schemas/wms/pi_wms_legend.json | json2ts > src/response/getLegendGraphicResponse.ts"
   },
   "dependencies": {
-    "@deltares/fews-web-oc-utils": "^0.1.9"
+    "@deltares/fews-web-oc-utils": "^0.1.11"
   },
   "devDependencies": {
     "@types/jest": "^28.0.0",
