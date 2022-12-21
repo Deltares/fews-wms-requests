@@ -5,7 +5,7 @@ import {GetLegendGraphicResponse} from "./response/getLegendGraphicResponse";
 import {BaseWMSFilter} from "./requestParameters/baseWmsFilter";
 import {filterToParamsWMS} from "./utils/filterToParams";
 import {WMSRequestType} from "./types/wmsRequestType";
-import PiRestService from "./restservice/piRestService";
+import {PiRestService} from "@deltares/fews-web-oc-utils";
 
 export class WMSProvider {
     private readonly baseUrl: string
