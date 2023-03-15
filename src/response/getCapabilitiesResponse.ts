@@ -37,6 +37,7 @@ export interface Layer {
     lowerValue?: number;
     upperValue?: number;
   };
+  boundingBox?: BoundingBox;
   styles?: Style[];
 }
 export interface Keyword {
@@ -51,6 +52,16 @@ export interface Keyword {
 export interface Ensemble {
   ensembleId: string;
   ensembleMemberIds: string[];
+}
+/**
+ * Bounding box according to CRS EPSG:3857 Web Mercator format
+ */
+export interface BoundingBox {
+  crs: "EPSG:3857";
+  minx: string;
+  maxy: string;
+  maxx: string;
+  miny: string;
 }
 export interface Style {
   name?: string;
