@@ -6,7 +6,7 @@
     "name": "Werner Kramer",
     "email": "werner.kramer@deltares.nl"
   },
-  "license": "ISC",
+  "license": "MIT",
   "keywords": [
     "FEWS",
     "Delft-FEWS",
