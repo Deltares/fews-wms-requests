@@ -1,6 +1,6 @@
 {
   "name": "@deltares/fews-wms-requests",
-  "version": "0.1.10",
+  "version": "0.1.11-alpha.0",
   "description": "Library for making requests to the FEWS WMS-T webservice",
   "author": {
     "name": "Werner Kramer",
