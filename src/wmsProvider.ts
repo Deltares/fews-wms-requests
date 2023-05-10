@@ -1,19 +1,20 @@
 import {GetCapabilitiesFilter} from "./requestParameters/getCapabilitiesFilter";
-import {GetCapabilitiesResponse} from "./response/getCapabilitiesResponse";
+import type {GetCapabilitiesResponse} from "./response/getCapabilitiesResponse";
 import {GetLegendGraphicFilter} from "./requestParameters/getLegendGraphicFilter";
-import {GetLegendGraphicResponse} from "./response/getLegendGraphicResponse";
+import type {GetLegendGraphicResponse} from "./response/getLegendGraphicResponse";
 import {BaseWMSFilter} from "./requestParameters/baseWmsFilter";
 import {filterToParamsWMS} from "./utils/filterToParams";
 import {WMSRequestType} from "./types/wmsRequestType";
 import {PiRestService} from "@deltares/fews-web-oc-utils";
+import type {TransformRequestFunction} from "@deltares/fews-web-oc-utils";
 
 export class WMSProvider {
     private readonly baseUrl: string
     webservice: PiRestService;
 
-    constructor(baseUrl: string) {
+    constructor(baseUrl: string, options: {transformRequestFn?: TransformRequestFunction} = {}) {
         this.baseUrl = baseUrl
-        this.webservice = new PiRestService(baseUrl);
+        this.webservice = new PiRestService(baseUrl, options.transformRequestFn);
     }
 
     async getCapabilities(filter: GetCapabilitiesFilter): Promise<GetCapabilitiesResponse> {

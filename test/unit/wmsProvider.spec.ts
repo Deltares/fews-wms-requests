@@ -6,6 +6,16 @@ import {GetCapabilitiesFilter} from "../../src";
 
 
 describe("WMS Provider Tests", function () {
+    async function transformRequest(request: Request): Promise<Request> {
+        const requestInit: RequestInit = {
+            // Only some of the properties of RequestInit are used by fetch-mock, such as 'headers'.
+            headers: {
+                'Content-Type': "application/json",
+                'Authorization': "Bearer 123"
+            },
+        }
+        return new Request(request, requestInit)
+    }
 
     afterAll(function () {
         fetchMock.restore();
@@ -31,6 +41,17 @@ describe("WMS Provider Tests", function () {
         expect(res.layers[0]?.timesDefault).toBe("1850-12-16T12:00:00Z");
         expect(res.layers[0]?.groupName).toBe("Goddard NASA Monthly Historical Grids");
         expect(res.layers[0]?.name).toBe("giss_e2_h_grid_monthly_historical_nat");
+    });
+
+    it("GetCapabilitiesWithToken", async function () {
+        fetchMock.get("https://rwsos-dataservices-ont.avi.deltares.nl/iwp/test/FewsWebServicesSecured/wms?request=GetCapabilities&format=application%2Fjson", {
+            status: 401,
+            body: ''
+        });
+        const provider = new WMSProvider("https://rwsos-dataservices-ont.avi.deltares.nl/iwp/test/FewsWebServicesSecured/wms", {transformRequestFn: transformRequest});
+        const filter = {} as GetCapabilitiesFilter;
+        const res = await provider.getCapabilities(filter);
+        expect(res).toBeUndefined(); // unauthorized will return a undefined response.
     });
 
 });
