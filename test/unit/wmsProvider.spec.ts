@@ -44,6 +44,10 @@ describe("WMS Provider Tests", function () {
     });
 
     it("GetCapabilitiesWithToken", async function () {
+        fetchMock.get("https://rwsos-dataservices-ont.avi.deltares.nl/iwp/test/FewsWebServicesSecured/wms?request=GetCapabilities&format=application%2Fjson", {
+            status: 401,
+            body: ''
+        });
         const provider = new WMSProvider("https://rwsos-dataservices-ont.avi.deltares.nl/iwp/test/FewsWebServicesSecured/wms", {transformRequestFn: transformRequest});
         const filter = {} as GetCapabilitiesFilter;
         const res = await provider.getCapabilities(filter);
