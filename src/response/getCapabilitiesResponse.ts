@@ -8,6 +8,7 @@
 export interface GetCapabilitiesResponse {
   title: string;
   layers: Layer[];
+  groups?: LayerGroup[];
 }
 export interface Layer {
   name: string;
@@ -66,4 +67,10 @@ export interface BoundingBox {
 export interface Style {
   name?: string;
   title: string;
+}
+export interface LayerGroup {
+  name: string;
+  title: string;
+  groupName?: string;
+  groupTitle?: string;
 }
