@@ -8,7 +8,7 @@
 export interface GetCapabilitiesResponse {
   title: string;
   layers: Layer[];
-  groups?: LayerGroup[];
+  groups: LayerGroup[];
 }
 export interface Layer {
   name: string;
