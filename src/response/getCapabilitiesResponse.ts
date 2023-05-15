@@ -14,7 +14,17 @@ export interface Layer {
   name: string;
   title: string;
   abstract?: string;
+  /**
+   * Path of the node the layer is attached to
+   */
+  path: string[];
+  /**
+   * Name of the group this layer is part of
+   */
   groupName?: string;
+  /**
+   * Title of the group this layer is part of
+   */
   groupTitle?: string;
   keywordList?: Keyword[];
   externalForecastTime?: string;
@@ -71,6 +81,16 @@ export interface Style {
 export interface LayerGroup {
   name: string;
   title: string;
+  /**
+   * Path of the node
+   */
+  path: string[];
+  /**
+   * Name of the parent group the group is part of
+   */
   groupName?: string;
+  /**
+   * Title of the parent group the group is part of
+   */
   groupTitle?: string;
 }
