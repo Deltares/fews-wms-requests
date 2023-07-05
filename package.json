@@ -27,7 +27,8 @@
     "test:unit": "jest unit --collect-coverage",
     "test:e2e": "jest e2e",
     "test": "jest --coverage",
-    "json2ts": "curl https://fewsdocs.deltares.nl/webservices/wms/schemas/wms/pi_wms_get_capabilities.json | json2ts > src/response/getCapabilitiesResponse.ts & curl https://fewsdocs.deltares.nl/webservices/wms/schemas/wms/pi_wms_legend.json | json2ts > src/response/getLegendGraphicResponse.ts"
+    "json2ts": "curl https://fewsdocs.deltares.nl/webservices/wms/schemas/wms/pi_wms_get_capabilities.json | json2ts > src/response/getCapabilitiesResponse.ts & curl https://fewsdocs.deltares.nl/webservices/wms/schemas/wms/pi_wms_legend.json | json2ts > src/response/getLegendGraphicResponse.ts",
+    "sonar": "sonar-scanner -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$SONAR_KEY -Dsonar.projectName='Delft-FEWS Web OC WMS Requests'"
   },
   "dependencies": {
     "@deltares/fews-web-oc-utils": "^0.2.1-alpha.0"
@@ -48,6 +49,7 @@
     "jsdom": "^21.1.1",
     "json-schema-to-typescript": "^11.0.2",
     "shx": "^0.3.2",
+    "sonarqube-scanner": "^3.0.1",
     "ts-jest": "^29.1.0",
     "ts-loader": "^9.3.1",
     "typedoc": "^0.23.13",
