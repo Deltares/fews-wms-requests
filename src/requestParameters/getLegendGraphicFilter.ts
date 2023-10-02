@@ -26,4 +26,9 @@ export interface GetLegendGraphicFilter extends BaseWMSFilter {
      *  For example: style=Class.Temperature.Extreme. Available styles are
      *  reported by the GetCapabilities request per layer. */
     style?: string;
+    /** (optional, since 2020.02 ): Default is false. If true, the display units
+
+     *  as used in FEWS are returned */
+
+    useDisplayUnits?: boolean;
 }
