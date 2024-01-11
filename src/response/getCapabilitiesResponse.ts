@@ -45,11 +45,26 @@ export interface Layer {
   lastValueTime?: string | null;
   elevation?: {
     units?: string;
+    unitSymbol?: string;
     lowerValue?: number;
     upperValue?: number;
+    tickInterval?: number;
+    irregularTicks?: number[];
   };
   boundingBox?: BoundingBox;
   styles?: Style[];
+  /**
+   * Set to true if a a geotiff image is supported for this layer with uv information. Default is valse
+   */
+  uv?: boolean;
+  animatedVectors?: {
+    numberOfParticles?: number;
+    particleSize?: number;
+    fadeAmount?: number;
+    particleColor?: string;
+    speedFactor?: number;
+    coloredParticles?: boolean;
+  };
 }
 export interface Keyword {
   parameterId?: string;
