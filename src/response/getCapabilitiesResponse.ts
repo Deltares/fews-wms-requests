@@ -65,6 +65,13 @@ export interface Layer {
     speedFactor?: number;
     coloredParticles?: boolean;
   };
+  /**
+   * workflow with its properties.
+   */
+  workflow?: {
+    workflowId?: string;
+    properties?: WorkflowProperties[];
+  };
 }
 export interface Keyword {
   parameterId?: string;
@@ -92,6 +99,13 @@ export interface BoundingBox {
 export interface Style {
   name?: string;
   title: string;
+}
+export interface WorkflowProperties {
+  type: "string" | "float" | "bool" | "double" | "int" | "dateTime";
+  key: string;
+  value?: string;
+  date?: string;
+  time?: string;
 }
 export interface LayerGroup {
   name: string;

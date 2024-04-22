@@ -15,4 +15,5 @@ export interface ColourMapEntry {
   label?: string;
   lowerValue: number;
   color: string;
+  colorSmoothing?: boolean;
 }
