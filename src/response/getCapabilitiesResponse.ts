@@ -63,7 +63,15 @@ export interface Layer {
     fadeAmount?: number;
     particleColor?: string;
     speedFactor?: number;
+    speedExponent?: number;
     coloredParticles?: boolean;
+  };
+  /**
+   * workflow with its properties.
+   */
+  workflow?: {
+    workflowId?: string;
+    properties?: WorkflowProperties[];
   };
 }
 export interface Keyword {
@@ -74,6 +82,10 @@ export interface Keyword {
   ensembleId?: string;
   ensembleMemberId?: string;
   forecastTime?: string;
+  /**
+   * Timeseries Type. SCALAR: Single value, SCALAR_MAP: Map of values (e.g. spectrum), COVERAGE: Grid of values, RATING_CURVE: Rating curve, TEXT: Text
+   */
+  type?: "SCALAR" | "SCALAR_MAP" | "COVERAGE" | "RATING_CURVE" | "TEXT";
 }
 export interface Ensemble {
   ensembleId: string;
@@ -92,6 +104,13 @@ export interface BoundingBox {
 export interface Style {
   name?: string;
   title: string;
+}
+export interface WorkflowProperties {
+  type: "string" | "float" | "bool" | "double" | "int" | "dateTime";
+  key: string;
+  value?: string;
+  date?: string;
+  time?: string;
 }
 export interface LayerGroup {
   name: string;
