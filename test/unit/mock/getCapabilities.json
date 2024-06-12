@@ -9,7 +9,8 @@
       "locationId" : "giss_e2_h_grid",
       "moduleInstanceId" : "ImportForecastGissE2HHistoricalNatGrid",
       "timeSeriesType" : "EXTERNAL_FORECASTING",
-      "forecastTime" : "1850-01-16T12:00:00Z"
+      "forecastTime" : "1850-01-16T12:00:00Z",
+      "type": "COVERAGE"
     } ],
     "timesDefault" : "1850-12-16T12:00:00Z",
     "times" : [ "1850-01-16T12:00:00Z", "1850-02-15T00:00:00Z", "1850-03-16T12:00:00Z", "1850-04-16T00:00:00Z", "1850-05-16T12:00:00Z", "1850-06-16T00:00:00Z", "1850-07-16T12:00:00Z", "1850-08-16T12:00:00Z", "1850-09-16T00:00:00Z", "1850-10-16T12:00:00Z", "1850-11-16T00:00:00Z", "1850-12-16T12:00:00Z" ],

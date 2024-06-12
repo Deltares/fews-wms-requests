@@ -41,6 +41,9 @@ describe("WMS Provider Tests", function () {
         expect(res.layers[0]?.timesDefault).toBe("1850-12-16T12:00:00Z");
         expect(res.layers[0]?.groupName).toBe("Goddard NASA Monthly Historical Grids");
         expect(res.layers[0]?.name).toBe("giss_e2_h_grid_monthly_historical_nat");
+        if (res.layers[0].keywordList && res.layers[0].keywordList.length > 0) {
+            expect(res.layers[0].keywordList[0]["type"]).toBe("COVERAGE");
+        }
     });
 
     it("GetCapabilitiesWithToken", async function () {
