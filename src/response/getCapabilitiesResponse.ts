@@ -43,6 +43,10 @@ export interface Layer {
    * Last time step from the times array that has a value. Null in case it is unknown (from archive).
    */
   lastValueTime?: string | null;
+  /**
+   * Set to true if all data layers are of type grid
+   */
+  onlyGrids?: boolean;
   elevation?: {
     units?: string;
     unitSymbol?: string;
@@ -82,10 +86,6 @@ export interface Keyword {
   ensembleId?: string;
   ensembleMemberId?: string;
   forecastTime?: string;
-  /**
-   * Timeseries Type. SCALAR: Single value, SCALAR_MAP: Map of values (e.g. spectrum), COVERAGE: Grid of values, RATING_CURVE: Rating curve, TEXT: Text
-   */
-  type?: "SCALAR" | "SCALAR_MAP" | "COVERAGE" | "RATING_CURVE" | "TEXT";
 }
 export interface Ensemble {
   ensembleId: string;
