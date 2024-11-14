@@ -105,4 +105,17 @@ export interface GetMapFilter extends BaseWMSFilter {
      *  and the u offset is 1.0. The u value = 200*0.1 + 1.0 = 21.0. A missing
      *  value is indicated by setting the R and G value to 255. */
     convertUVtoRG?: boolean;
+
+    /**
+     * Since 2021.02. Export values using display units.
+     * The default is false.
+     */
+    useDisplayUnits?: boolean;
+
+    /**
+     * Since 2023.02. In case of multiple layers where time steps don't always match,
+     * use the last value for layers that don't have a value for the selected time.
+     */
+    useLastValue?: boolean;
+
 }
