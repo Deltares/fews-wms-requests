@@ -28,6 +28,7 @@ export interface Layer {
   groupTitle?: string;
   keywordList?: Keyword[];
   externalForecastTime?: string;
+  taskRunId?: string;
   ensembles?: Ensemble[];
   timesDefault?: string;
   times?: string[];
