@@ -45,6 +45,8 @@ describe("WMS Provider Tests", function () {
         if (res.layers[0].keywordList && res.layers[0].keywordList.length > 0) {
             expect(res.layers[0].keywordList[0]["parameterId"]).toBe("T.hindcast.mean.global.historicalNat");
         }
+        expect(res.layers[0]?.externalForecastTime).toBe("1850-01-16T12:00:00Z");
+        expect(res.layers[0]?.taskRunId).toBe("taskrun-id");
     });
 
     it("GetCapabilitiesWithToken", async function () {
@@ -54,8 +56,8 @@ describe("WMS Provider Tests", function () {
         });
         const provider = new WMSProvider("https://rwsos-dataservices-ont.avi.deltares.nl/iwp/test/FewsWebServicesSecured/wms", {transformRequestFn: transformRequest});
         const filter = {} as GetCapabilitiesFilter;
-        const res = await provider.getCapabilities(filter);
-        expect(res).toBeUndefined(); // unauthorized will return a undefined response.
+        const res = provider.getCapabilities(filter);
+        await expect(res).rejects.toThrow("Fetch Error"); // unauthorized will throw a fetch error
     });
 
 });
