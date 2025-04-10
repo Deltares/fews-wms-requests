@@ -17,7 +17,7 @@ export interface Layer {
   /**
    * Path of the node the layer is attached to
    */
-  path: string[];
+  path?: string[];
   /**
    * Name of the group this layer is part of
    */
@@ -28,6 +28,10 @@ export interface Layer {
   groupTitle?: string;
   keywordList?: Keyword[];
   externalForecastTime?: string;
+  /**
+   * Task run id of the forecast
+   */
+  taskRunId?: string;
   ensembles?: Ensemble[];
   timesDefault?: string;
   times?: string[];
@@ -69,6 +73,9 @@ export interface Layer {
     speedFactor?: number;
     speedExponent?: number;
     coloredParticles?: boolean;
+    maximumParticleAge?: number;
+    growthRate?: number;
+    particleType?: "simple" | "wave-crest";
   };
   /**
    * workflow with its properties.
