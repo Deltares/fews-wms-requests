@@ -21,5 +21,6 @@ describe("pi webservice provider", function () {
         expect(res.unit).toBeUndefined();
         expect(res.legend[0].lowerValue).toEqual(0);
         expect(res.legend[0].color).toEqual('#ffffff');
+        expect(res.legend.length).toEqual(11);
     })
 })
