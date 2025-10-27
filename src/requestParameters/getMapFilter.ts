@@ -60,6 +60,11 @@ export interface GetMapFilter extends BaseWMSFilter {
      *  returned */
     externalForecastTime?: string;
 
+    /** (optional, taskRunId, since 2023.02): get the map for
+     *  a specific task run id.
+     */
+    taskRunId?: string;
+
     /** (boolean, optional, default=false, since 2020.01): apply seamless
      *  integration with the archive. Only valid for external forecasts. Both an
      *  externalForecast time and layers have to be specified as well. */
