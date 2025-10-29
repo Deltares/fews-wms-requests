@@ -28,10 +28,6 @@ export interface Layer {
   groupTitle?: string;
   keywordList?: Keyword[];
   externalForecastTime?: string;
-  /**
-   * Task run id of the forecast
-   */
-  taskRunId?: string;
   ensembles?: Ensemble[];
   timesDefault?: string;
   times?: string[];
@@ -43,6 +39,7 @@ export interface Layer {
    * First time step from the time array that has a value. Null in case it is unknown (from archive).
    */
   firstValueTime?: string | null;
+  aggregation?: WmsAggregationType;
   /**
    * Last time step from the times array that has a value. Null in case it is unknown (from archive).
    */
@@ -97,6 +94,10 @@ export interface Keyword {
 export interface Ensemble {
   ensembleId: string;
   ensembleMemberIds: string[];
+}
+export interface WmsAggregationType {
+  aggregationType?: string;
+  labels?: string[];
 }
 /**
  * Bounding box according to CRS EPSG:3857 Web Mercator format

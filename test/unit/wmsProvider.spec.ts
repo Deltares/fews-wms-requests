@@ -46,7 +46,6 @@ describe("WMS Provider Tests", function () {
             expect(res.layers[0].keywordList[0]["parameterId"]).toBe("T.hindcast.mean.global.historicalNat");
         }
         expect(res.layers[0]?.externalForecastTime).toBe("1850-01-16T12:00:00Z");
-        expect(res.layers[0]?.taskRunId).toBe("taskrun-id");
     });
 
     it("GetCapabilitiesWithToken", async function () {
