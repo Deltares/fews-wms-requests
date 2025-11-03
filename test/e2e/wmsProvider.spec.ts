@@ -3,7 +3,6 @@ import {WMSProvider} from "../../src/wmsProvider";
 import {GetCapabilitiesFilter, GetLegendGraphicFilter} from "../../src";
 
 const baseUrl = process.env.DOCKER_URL || "";
-const fewsVersion: number = process.env.FEWS_VERSION ? parseInt(process.env.FEWS_VERSION, 10) : 999999;
 
 describe("wms webservice provider", function () {
     it("get capabilities", async function () {

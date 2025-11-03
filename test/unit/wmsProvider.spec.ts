@@ -18,7 +18,7 @@ describe("WMS Provider Tests", function () {
     }
 
     afterAll(function () {
-        fetchMock.restore();
+        fetchMock.hardReset();
     });
 
     it("GetCapabilities", async function () {
