@@ -1,5 +1,4 @@
-export * from './types'
-export * from './utils'
 export * from './response'
 export * from './requestParameters'
 export * from './wmsProvider'
+export * from './wmsRequestType'

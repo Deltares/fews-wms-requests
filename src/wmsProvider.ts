@@ -3,8 +3,8 @@ import type {GetCapabilitiesResponse} from "./response/getCapabilitiesResponse";
 import {GetLegendGraphicFilter} from "./requestParameters/getLegendGraphicFilter";
 import type {GetLegendGraphicResponse} from "./response/getLegendGraphicResponse";
 import {BaseWMSFilter} from "./requestParameters/baseWmsFilter";
-import {filterToParamsWMS} from "./utils/filterToParams";
-import {WMSRequestType} from "./types/wmsRequestType";
+import {filterToParamsWMS} from "./filterToParams";
+import {WMSRequestType} from "./wmsRequestType";
 
 // @ts-expect-error  @deltares/fews-web-oc-utils does not properly export its types.
 import {PiRestService} from "@deltares/fews-web-oc-utils";

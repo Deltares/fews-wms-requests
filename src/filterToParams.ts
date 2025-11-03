@@ -1,4 +1,4 @@
-import {WMSRequestType} from "../types";
+import {WMSRequestType} from "./wmsRequestType";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function filterToParams (filter: Record<string, any>): string {
