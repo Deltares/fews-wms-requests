@@ -5,7 +5,10 @@ import type {GetLegendGraphicResponse} from "./response/getLegendGraphicResponse
 import {BaseWMSFilter} from "./requestParameters/baseWmsFilter";
 import {filterToParamsWMS} from "./utils/filterToParams";
 import {WMSRequestType} from "./types/wmsRequestType";
+
+// @ts-expect-error  @deltares/fews-web-oc-utils does not properly export its types.
 import {PiRestService} from "@deltares/fews-web-oc-utils";
+// @ts-expect-error  @deltares/fews-web-oc-utils does not properly export its types.
 import type {TransformRequestFunction} from "@deltares/fews-web-oc-utils";
 
 export class WMSProvider {

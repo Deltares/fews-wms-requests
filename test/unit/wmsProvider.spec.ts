@@ -1,9 +1,10 @@
 import 'cross-fetch/polyfill';
 import fetchMock from "fetch-mock";
-import expectedGetCapabilities from '../unit/mock/getCapabilities.json'
-import {WMSProvider} from "../../src/wmsProvider";
-import {GetCapabilitiesFilter} from "../../src";
+import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 
+import expectedGetCapabilities from './mock/getCapabilities.json'
+import { WMSProvider } from "../../src/wmsProvider";
+import { GetCapabilitiesFilter } from "../../src";
 
 describe("WMS Provider Tests", function () {
     async function transformRequest(request: Request): Promise<Request> {
@@ -17,15 +18,18 @@ describe("WMS Provider Tests", function () {
         return new Request(request, requestInit)
     }
 
+    beforeAll(() => fetchMock.mockGlobal() )
+
     afterAll(function () {
         fetchMock.hardReset();
     });
 
     it("GetCapabilities", async function () {
-        fetchMock.get("https://rwsos-dataservices-ont.avi.deltares.nl/iwp/test/FewsWebServices/wms?request=GetCapabilities&format=application%2Fjson", {
+        fetchMock.route("https://rwsos-dataservices-ont.avi.deltares.nl/iwp/test/FewsWebServices/wms?request=GetCapabilities&format=application%2Fjson", {
             status: 200,
             body: JSON.stringify(expectedGetCapabilities)
         });
+
         const provider = new WMSProvider("https://rwsos-dataservices-ont.avi.deltares.nl/iwp/test/FewsWebServices/wms");
         const filter = {} as GetCapabilitiesFilter;
         const res = await provider.getCapabilities(filter);
@@ -49,10 +53,11 @@ describe("WMS Provider Tests", function () {
     });
 
     it("GetCapabilitiesWithToken", async function () {
-        fetchMock.get("https://rwsos-dataservices-ont.avi.deltares.nl/iwp/test/FewsWebServicesSecured/wms?request=GetCapabilities&format=application%2Fjson", {
+        fetchMock.route("https://rwsos-dataservices-ont.avi.deltares.nl/iwp/test/FewsWebServicesSecured/wms?request=GetCapabilities&format=application%2Fjson", {
             status: 401,
             body: ''
         });
+
         const provider = new WMSProvider("https://rwsos-dataservices-ont.avi.deltares.nl/iwp/test/FewsWebServicesSecured/wms", {transformRequestFn: transformRequest});
         const filter = {} as GetCapabilitiesFilter;
         const res = provider.getCapabilities(filter);

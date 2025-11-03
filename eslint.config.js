@@ -4,7 +4,7 @@ import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
 export default defineConfig(
-  globalIgnores(['dist/', 'doc/', 'jest.config.js', 'webpack.config.cjs']),
+  globalIgnores(['coverage/', 'dist/', 'doc/', 'jest.config.js', 'webpack.config.cjs']),
   eslint.configs.recommended,
   tseslint.configs.recommended,
   {
