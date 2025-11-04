@@ -39,7 +39,7 @@ export interface Layer {
    * First time step from the time array that has a value. Null in case it is unknown (from archive).
    */
   firstValueTime?: string | null;
-  aggregation?: WmsAggregationType;
+  aggregation?: WmsAggregationType[];
   /**
    * Last time step from the times array that has a value. Null in case it is unknown (from archive).
    */
