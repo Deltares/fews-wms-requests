@@ -3,8 +3,9 @@ import type {GetCapabilitiesResponse} from "./response/getCapabilitiesResponse";
 import {GetLegendGraphicFilter} from "./requestParameters/getLegendGraphicFilter";
 import type {GetLegendGraphicResponse} from "./response/getLegendGraphicResponse";
 import {BaseWMSFilter} from "./requestParameters/baseWmsFilter";
-import {filterToParamsWMS} from "./utils/filterToParams";
-import {WMSRequestType} from "./types/wmsRequestType";
+import {filterToParamsWMS} from "./filterToParams";
+import {WMSRequestType} from "./wmsRequestType";
+
 import {PiRestService} from "@deltares/fews-web-oc-utils";
 import type {TransformRequestFunction} from "@deltares/fews-web-oc-utils";
 

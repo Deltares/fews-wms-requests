@@ -1,9 +1,9 @@
-import 'cross-fetch/polyfill';
-import {WMSProvider} from "../../src/wmsProvider";
-import {GetCapabilitiesFilter, GetLegendGraphicFilter} from "../../src";
+import { describe, expect, it } from 'vitest'
 
-const baseUrl = process.env.DOCKER_URL || "";
-const fewsVersion: number = process.env.FEWS_VERSION ? parseInt(process.env.FEWS_VERSION, 10) : 999999;
+import { WMSProvider } from "../../src/wmsProvider"
+import { GetCapabilitiesFilter, GetLegendGraphicFilter } from "../../src"
+
+const baseUrl = import.meta.env.VITE_DOCKER_URL || "";
 
 describe("wms webservice provider", function () {
     it("get capabilities", async function () {
