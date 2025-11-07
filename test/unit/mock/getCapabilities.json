@@ -1,29 +1,46 @@
 {
-  "title" : "Spatial Display",
-  "layers" : [ {
-    "name" : "giss_e2_h_grid_monthly_historical_nat",
-    "title" : "Goddard NASA historical Natural surface temperature",
-    "groupName" : "Goddard NASA Monthly Historical Grids",
-    "keywordList" : [ {
-      "parameterId" : "T.hindcast.mean.global.historicalNat",
-      "locationId" : "giss_e2_h_grid",
-      "moduleInstanceId" : "ImportForecastGissE2HHistoricalNatGrid",
-      "timeSeriesType" : "EXTERNAL_FORECASTING",
-      "forecastTime" : "1850-01-16T12:00:00Z"
-    } ],
-    "externalForecastTime" : "1850-01-16T12:00:00Z",
-    "timesDefault" : "1850-12-16T12:00:00Z",
-    "times" : [ "1850-01-16T12:00:00Z", "1850-02-15T00:00:00Z", "1850-03-16T12:00:00Z", "1850-04-16T00:00:00Z", "1850-05-16T12:00:00Z", "1850-06-16T00:00:00Z", "1850-07-16T12:00:00Z", "1850-08-16T12:00:00Z", "1850-09-16T00:00:00Z", "1850-10-16T12:00:00Z", "1850-11-16T00:00:00Z", "1850-12-16T12:00:00Z" ],
-    "completelyMissing" : false,
-    "firstValueTime" : "1850-01-16T12:00:00Z",
-    "lastValueTime" : "1850-12-16T12:00:00Z",
-    "boundingBox" : {
-      "crs" : "EPSG:3857",
-      "minx" : "-20037508.34278924",
-      "maxy" : "15028132.47295554",
-      "maxx" : "0.00161697",
-      "miny" : "-0.00071121"
-    },
-    "onlyGrids": true
-  } ]
+  "title": "Spatial Display",
+  "layers": [
+    {
+      "name": "giss_e2_h_grid_monthly_historical_nat",
+      "title": "Goddard NASA historical Natural surface temperature",
+      "groupName": "Goddard NASA Monthly Historical Grids",
+      "keywordList": [
+        {
+          "parameterId": "T.hindcast.mean.global.historicalNat",
+          "locationId": "giss_e2_h_grid",
+          "moduleInstanceId": "ImportForecastGissE2HHistoricalNatGrid",
+          "timeSeriesType": "EXTERNAL_FORECASTING",
+          "forecastTime": "1850-01-16T12:00:00Z"
+        }
+      ],
+      "externalForecastTime": "1850-01-16T12:00:00Z",
+      "timesDefault": "1850-12-16T12:00:00Z",
+      "times": [
+        "1850-01-16T12:00:00Z",
+        "1850-02-15T00:00:00Z",
+        "1850-03-16T12:00:00Z",
+        "1850-04-16T00:00:00Z",
+        "1850-05-16T12:00:00Z",
+        "1850-06-16T00:00:00Z",
+        "1850-07-16T12:00:00Z",
+        "1850-08-16T12:00:00Z",
+        "1850-09-16T00:00:00Z",
+        "1850-10-16T12:00:00Z",
+        "1850-11-16T00:00:00Z",
+        "1850-12-16T12:00:00Z"
+      ],
+      "completelyMissing": false,
+      "firstValueTime": "1850-01-16T12:00:00Z",
+      "lastValueTime": "1850-12-16T12:00:00Z",
+      "boundingBox": {
+        "crs": "EPSG:3857",
+        "minx": "-20037508.34278924",
+        "maxy": "15028132.47295554",
+        "maxx": "0.00161697",
+        "miny": "-0.00071121"
+      },
+      "onlyGrids": true
+    }
+  ]
 }

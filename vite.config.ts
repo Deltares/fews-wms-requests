@@ -13,7 +13,7 @@ export default defineConfig({
       entry: resolveRelativePath('src/index.ts'),
       formats: ['es'],
       name: 'fews-wms-requests',
-      fileName: 'fews-wms-requests'
+      fileName: 'fews-wms-requests',
     },
     rollupOptions: {
       plugins: [
@@ -21,9 +21,9 @@ export default defineConfig({
           allowImportingTsExtensions: false,
           declaration: true,
           declarationDir: resolveRelativePath('dist'),
-          rootDir: resolveRelativePath('src')
-        })
-      ]
-    }
-  }
+          rootDir: resolveRelativePath('src'),
+        }),
+      ],
+    },
+  },
 })
