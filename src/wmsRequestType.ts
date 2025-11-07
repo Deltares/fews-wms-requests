@@ -1,4 +1,4 @@
 export enum WMSRequestType {
-    GetCapabilities = 'GetCapabilities',
-    GetLegendGraphic = 'GetLegendGraphic'
+  GetCapabilities = 'GetCapabilities',
+  GetLegendGraphic = 'GetLegendGraphic',
 }
