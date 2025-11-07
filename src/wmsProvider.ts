@@ -6,9 +6,7 @@ import {BaseWMSFilter} from "./requestParameters/baseWmsFilter";
 import {filterToParamsWMS} from "./filterToParams";
 import {WMSRequestType} from "./wmsRequestType";
 
-// @ts-expect-error  @deltares/fews-web-oc-utils does not properly export its types.
 import {PiRestService} from "@deltares/fews-web-oc-utils";
-// @ts-expect-error  @deltares/fews-web-oc-utils does not properly export its types.
 import type {TransformRequestFunction} from "@deltares/fews-web-oc-utils";
 
 export class WMSProvider {
