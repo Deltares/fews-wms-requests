@@ -3,6 +3,10 @@
 
 name: Node.js Package
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 on:
   release:
     types: [created]
@@ -26,9 +30,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
-          registry-url: https://registry.npmjs.org/
+          registry-url: 'https://registry.npmjs.org'
+      - name: Update npm # 11.5.0 required for OIDC authentication
+        run: npm install -g npm@latest
       - run: npm ci
       - run: npm run build
       - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
