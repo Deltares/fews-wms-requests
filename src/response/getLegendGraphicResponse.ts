@@ -8,6 +8,9 @@
 export type ColourMap = ColourMapEntry[]
 
 export interface GetLegendGraphicResponse {
+  missingValueColor?: string
+  belowRangeColor?: string
+  aboveRangeColor?: string
   unit?: string
   legend: ColourMap
 }
