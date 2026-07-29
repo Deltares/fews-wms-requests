@@ -4,7 +4,6 @@
 name: Node.js Package
 
 permissions:
-  id-token: write # Required for OIDC
   contents: read
 
 on:
@@ -15,23 +14,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
       - run: npm ci
       - run: npm run test:unit
 
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 22
-      - name: Update npm # 11.5.0 required for OIDC authentication
-        run: npm install -g npm@latest
+          node-version: 24
       - run: npm ci
       - run: npm run build
       - run: npm publish --access public
