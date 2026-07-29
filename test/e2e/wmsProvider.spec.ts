@@ -25,6 +25,6 @@ describe('wms webservice provider', function () {
     expect(res.legend[1].colorSmoothing).toBeTruthy()
     expect(res.legend[1].label).toEqual('>= 1')
     expect(res.legend[1].lowerValue).toEqual(1.0)
-    expect(res.legend.length).toEqual(11)
+    expect(res.legend).toHaveLength(11)
   })
 })
