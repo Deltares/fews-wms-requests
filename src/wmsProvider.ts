@@ -28,9 +28,9 @@ export class WMSProvider {
   }
 
   async getLegendGraphic(
-    filter: GetLegendGraphicFilter,
+    filter: Partial<GetLegendGraphicFilter>,
   ): Promise<GetLegendGraphicResponse> {
-    filter = { ...{ service: 'WMS', version: '1.3' }, ...filter }
+    filter = { service: 'WMS', version: '1.3', ...filter }
     return this.executeWMSRequest(WMSRequestType.GetLegendGraphic, filter)
   }
 

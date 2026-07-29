@@ -1,6 +1,9 @@
 import { BaseWMSFilter } from '../requestParameters/baseWmsFilter'
 
 export interface GetLegendGraphicFilter extends BaseWMSFilter {
+  service: 'WMS'
+  version: '1.3'
+
   /** (optional, since 2020.02): The format of the GetLegendGraphic response.
    *  Possible values are:  image/png (the default) or application/json. */
   format?: 'image/png' | 'application/json'
