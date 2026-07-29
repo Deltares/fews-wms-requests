@@ -15,5 +15,5 @@ export function filterToParamsWMS(
   requestType: WMSRequestType,
   filter: Record<string, any>,
 ): string {
-  return filterToParams({ ...{ request: requestType }, ...filter })
+  return filterToParams({ request: requestType, ...filter })
 }
