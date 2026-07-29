@@ -81,7 +81,11 @@ export interface Keyword {
   parameterId?: string
   locationId?: string
   moduleInstanceId?: string
-  timeSeriesType?: 'EXTERNAL_HISTORICAL' | 'EXTERNAL_FORECASTING' | 'SIMULATED_HISTORICAL' | 'SIMULATED_FORECASTING'
+  timeSeriesType?:
+    | 'EXTERNAL_HISTORICAL'
+    | 'EXTERNAL_FORECASTING'
+    | 'SIMULATED_HISTORICAL'
+    | 'SIMULATED_FORECASTING'
   ensembleId?: string
   ensembleMemberId?: string
   forecastTime?: string
