@@ -1,5 +1,13 @@
 import fetchMock from 'fetch-mock'
-import { afterAll, beforeAll, describe, expect, it } from 'vitest'
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest'
 
 import expectedGetCapabilities from './mock/getCapabilities.json'
 import { WMSProvider } from '../../src/wmsProvider'
@@ -76,5 +84,49 @@ describe('WMS Provider Tests', function () {
     const filter = {} as GetCapabilitiesFilter
     const res = provider.getCapabilities(filter)
     await expect(res).rejects.toThrow('Fetch Error') // unauthorized will throw a fetch error
+  })
+
+  describe('relative baseUrl', function () {
+    afterEach(function () {
+      vi.unstubAllGlobals()
+    })
+
+    it('resolves a relative baseUrl against document.baseURI', async function () {
+      vi.stubGlobal('document', {
+        baseURI: 'https://rwsos-dataservices-ont.avi.deltares.nl/iwp/test/',
+      })
+
+      fetchMock.route(
+        'https://rwsos-dataservices-ont.avi.deltares.nl/iwp/test/FewsWebServices/wms?request=GetCapabilities&format=application%2Fjson',
+        {
+          status: 200,
+          body: JSON.stringify(expectedGetCapabilities),
+        },
+      )
+
+      const provider = new WMSProvider('FewsWebServices/wms')
+      const filter = {} as GetCapabilitiesFilter
+      const res = await provider.getCapabilities(filter)
+      expect(res.layers.length).toBeGreaterThan(0)
+    })
+
+    it('resolves a root-relative baseUrl against document.baseURI', async function () {
+      vi.stubGlobal('document', {
+        baseURI: 'https://rwsos-dataservices-ont.avi.deltares.nl/iwp/test/',
+      })
+
+      fetchMock.route(
+        'https://rwsos-dataservices-ont.avi.deltares.nl/FewsWebServices/wms?request=GetCapabilities&format=application%2Fjson',
+        {
+          status: 200,
+          body: JSON.stringify(expectedGetCapabilities),
+        },
+      )
+
+      const provider = new WMSProvider('/FewsWebServices/wms')
+      const filter = {} as GetCapabilitiesFilter
+      const res = await provider.getCapabilities(filter)
+      expect(res.layers.length).toBeGreaterThan(0)
+    })
   })
 })
