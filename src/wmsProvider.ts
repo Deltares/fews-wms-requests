@@ -9,6 +9,7 @@ import { WMSRequestType } from './wmsRequestType'
 import { PiRestService } from '@deltares/fews-web-oc-utils'
 import type { TransformRequestFunction } from '@deltares/fews-web-oc-utils'
 import { absoluteUrl } from './utils/absoluteUrl'
+import { GetMapFilter } from './requestParameters'
 
 export class WMSProvider {
   private readonly _baseUrl: URL
@@ -47,5 +48,10 @@ export class WMSProvider {
     const url = new URL(queryParameters, this._baseUrl)
     const res = await this.webservice.getData<responseType>(url.toString())
     return res.data
+  }
+
+  getMapUrl(filter: GetMapFilter): URL {
+    const queryParameters = filterToParamsWMS(WMSRequestType.GetMap, filter)
+    return new URL(queryParameters, this._baseUrl)
   }
 }
