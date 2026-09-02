@@ -8,16 +8,18 @@ import { WMSRequestType } from './wmsRequestType'
 
 import { PiRestService } from '@deltares/fews-web-oc-utils'
 import type { TransformRequestFunction } from '@deltares/fews-web-oc-utils'
+import { absoluteUrl } from './utils/absoluteUrl'
+import { GetMapFilter } from './requestParameters'
 
 export class WMSProvider {
-  private readonly baseUrl: string
+  private readonly _baseUrl: URL
   webservice: PiRestService
 
   constructor(
     baseUrl: string,
     options: { transformRequestFn?: TransformRequestFunction } = {},
   ) {
-    this.baseUrl = baseUrl
+    this._baseUrl = absoluteUrl(baseUrl)
     this.webservice = new PiRestService(baseUrl, options.transformRequestFn)
   }
 
@@ -43,8 +45,13 @@ export class WMSProvider {
     }
     const filterWithDefaults = { ...defaults, ...filter }
     const queryParameters = filterToParamsWMS(requestType, filterWithDefaults)
-    const url = `${this.baseUrl}${queryParameters}`
-    const res = await this.webservice.getData<responseType>(url)
+    const url = new URL(queryParameters, this._baseUrl)
+    const res = await this.webservice.getData<responseType>(url.toString())
     return res.data
+  }
+
+  getMapUrl(filter: GetMapFilter): URL {
+    const queryParameters = filterToParamsWMS(WMSRequestType.GetMap, filter)
+    return new URL(queryParameters, this._baseUrl)
   }
 }
