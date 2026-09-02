@@ -1,6 +1,8 @@
 import { BaseWMSFilter } from './baseWmsFilter'
 
 export interface GetMapFilter extends BaseWMSFilter {
+  service: 'WMS'
+
   /** (required): the layerId of the plot to display. Only one layerid is
    *  supported. */
   layers: string
@@ -13,7 +15,7 @@ export interface GetMapFilter extends BaseWMSFilter {
    *      yyyy-MM-ddTHH:mm:ss.sssZ.
    *  Since 2021.01 the default time as reported by the GetCapabilities will be
    *  used if no time parameter was specified. */
-  time: string
+  time?: string
 
   /** (optional, since 2020.02): for 3d grids an elevation can be specified. The
    *  elevations should be inside the range as reported by the GetCapabilities. */
@@ -31,7 +33,7 @@ export interface GetMapFilter extends BaseWMSFilter {
 
   /** (required): the output projection of the plot. Only supported projection
    *  is: EPSG:3857 */
-  crs?: 'EPSG:3857'
+  crs: 'EPSG:3857'
 
   /** (required): the bounding box (in the projection as defined by the SRS
    *  parameter) of the extent that should be plot. You can find your bbox at
@@ -122,4 +124,10 @@ export interface GetMapFilter extends BaseWMSFilter {
    * use the last value for layers that don't have a value for the selected time.
    */
   useLastValue?: boolean
+
+  /** (optional) Aggregation label returned by the getCapabilities */
+  aggregation?: string
+
+  /** (optional) The type of the layer, either 'static' or 'dynamic'. */
+  layerType?: string
 }
