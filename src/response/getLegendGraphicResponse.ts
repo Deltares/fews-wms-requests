@@ -7,13 +7,7 @@ export interface GetLegendGraphicResponse {
   belowRangeColor?: string
   aboveRangeColor?: string
   unit?: string
-  /**
-   * The class break identifier/name
-   */
   name?: string
-  /**
-   * The class break description/title
-   */
   title?: string
   legend: ColourMap
 }
