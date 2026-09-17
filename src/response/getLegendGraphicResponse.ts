@@ -7,6 +7,8 @@ export interface GetLegendGraphicResponse {
   belowRangeColor?: string
   aboveRangeColor?: string
   unit?: string
+  name?: string
+  title?: string
   legend: ColourMap
 }
 export interface ColourMapEntry {
