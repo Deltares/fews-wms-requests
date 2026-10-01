@@ -1,2 +1,2 @@
-export * from './getLegendGraphicResponse'
-export * from './getCapabilitiesResponse'
+export * from './getLegendGraphicResponse.js'
+export * from './getCapabilitiesResponse.js'
