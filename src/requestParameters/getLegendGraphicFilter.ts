@@ -1,4 +1,4 @@
-import { BaseWMSFilter } from '../requestParameters/baseWmsFilter'
+import { BaseWMSFilter } from './baseWmsFilter.js'
 
 export interface GetLegendGraphicFilter extends BaseWMSFilter {
   service: 'WMS'

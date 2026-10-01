@@ -1,15 +1,15 @@
-import { GetCapabilitiesFilter } from './requestParameters/getCapabilitiesFilter'
-import type { GetCapabilitiesResponse } from './response/getCapabilitiesResponse'
-import { GetLegendGraphicFilter } from './requestParameters/getLegendGraphicFilter'
-import type { GetLegendGraphicResponse } from './response/getLegendGraphicResponse'
-import { BaseWMSFilter } from './requestParameters/baseWmsFilter'
-import { filterToParamsWMS } from './filterToParams'
-import { WMSRequestType } from './wmsRequestType'
+import { GetCapabilitiesFilter } from './requestParameters/getCapabilitiesFilter.js'
+import type { GetCapabilitiesResponse } from './response/getCapabilitiesResponse.js'
+import { GetLegendGraphicFilter } from './requestParameters/getLegendGraphicFilter.js'
+import type { GetLegendGraphicResponse } from './response/getLegendGraphicResponse.js'
+import { BaseWMSFilter } from './requestParameters/baseWmsFilter.js'
+import { filterToParamsWMS } from './filterToParams.js'
+import { WMSRequestType } from './wmsRequestType.js'
 
 import { PiRestService } from '@deltares/fews-web-oc-utils'
 import type { TransformRequestFunction } from '@deltares/fews-web-oc-utils'
-import { absoluteUrl } from './utils/absoluteUrl'
-import { GetMapFilter } from './requestParameters'
+import { absoluteUrl } from './utils/absoluteUrl.js'
+import { GetMapFilter } from './requestParameters/index.js'
 
 export class WMSProvider {
   private readonly _baseUrl: URL

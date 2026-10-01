@@ -20,8 +20,8 @@
   "module": "./dist/fews-wms-requests.js",
   "exports": {
     ".": {
-      "import": "./dist/fews-wms-requests.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/fews-wms-requests.js"
     }
   },
   "files": [

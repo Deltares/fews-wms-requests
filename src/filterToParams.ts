@@ -1,4 +1,4 @@
-import { WMSRequestType } from './wmsRequestType'
+import { WMSRequestType } from './wmsRequestType.js'
 
 export function filterToParams(filter: Record<string, any>): string {
   const filterArgs = Object.entries(filter).flatMap(([key, value]) => {

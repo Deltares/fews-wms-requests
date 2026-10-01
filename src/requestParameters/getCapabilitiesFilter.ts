@@ -1,4 +1,4 @@
-import { BaseWMSFilter } from './baseWmsFilter'
+import { BaseWMSFilter } from './baseWmsFilter.js'
 
 export interface GetCapabilitiesFilter extends BaseWMSFilter {
   /** Format of the response. Options are: application/xml or application/json.

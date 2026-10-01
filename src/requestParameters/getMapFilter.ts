@@ -1,4 +1,4 @@
-import { BaseWMSFilter } from './baseWmsFilter'
+import { BaseWMSFilter } from './baseWmsFilter.js'
 
 export interface GetMapFilter extends BaseWMSFilter {
   service: 'WMS'
