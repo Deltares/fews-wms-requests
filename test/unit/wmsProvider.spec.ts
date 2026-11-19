@@ -7,7 +7,7 @@ import {
   expect,
   it,
   vi,
-} from 'vitest'
+} from 'vite-plus/test'
 
 import expectedGetCapabilities from './mock/getCapabilities.json'
 import { WMSProvider } from '../../src/wmsProvider'

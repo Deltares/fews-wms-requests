@@ -31,7 +31,7 @@ const generateTypes = async (schemas) => {
         const ts = await compile(data, schema.output, options)
         fs.writeFileSync(schema.output, ts)
       } catch (error) {
-        console.error(`Error processing file ${schema.url}: ${error}`)
+        console.error(`Error processing file ${schema.url}: ${String(error)}`)
       }
     }),
   )
